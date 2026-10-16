@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://s2gkai8guh1v"]
+
+[ext_resource type="Texture2D" uid="uid://cviatayrsghlb" path="res://assets/world/sky.png" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://eu6tcxtw6jyl" path="res://assets/fonts/Pixel Game.otf" id="2_bqqt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfg4s"]
+font = ExtResource("2_bqqt6")
+font_size = 100
+
+[node name="main_menu" type="Node2D" unique_id=1301808872]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1166300026]
+position = Vector2(587, 333)
+scale = Vector2(4.784, 3.42)
+texture = ExtResource("1_ekxnf")
+
+[node name="Button" type="Button" parent="." unique_id=1433202249]
+offset_left = 454.0
+offset_top = 277.0
+offset_right = 774.0
+offset_bottom = 362.0
+
+[node name="Label" type="Label" parent="." unique_id=1940165154]
+offset_left = 464.0
+offset_top = 99.0
+offset_right = 744.0
+offset_bottom = 201.0
+text = "Hop-Up!"
+label_settings = SubResource("LabelSettings_cfg4s")

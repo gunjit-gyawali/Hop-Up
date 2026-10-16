@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ccfscfk1wbwwo"]
+
+[ext_resource type="Texture2D" uid="uid://bceh0l2xdto43" path="res://assets/player/4-Jump/1.png" id="1_dqkch"]
+[ext_resource type="Script" uid="uid://da0d52nkh4esw" path="res://scripts/player.gd" id="1_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://ddun42v6ggxe4" path="res://assets/player/4-Jump/2.png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://bpnqy2l0lfo6q" path="res://assets/player/4-Jump/3.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://dtx2v6j7oafku" path="res://assets/player/4-Jump/4.png" id="4_fjrip"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfg4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dqkch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qlg0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjrip")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfg4s"]
+size = Vector2(26, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i08kd"]
+size = Vector2(26, 13)
+
+[node name="player" type="CharacterBody2D" unique_id=1641546661]
+script = ExtResource("1_qlg0r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1651730488]
+position = Vector2(32, 29)
+sprite_frames = SubResource("SpriteFrames_cfg4s")
+animation = &"jump"
+frame_progress = 0.27391776
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2097714938]
+position = Vector2(36, 51.5)
+shape = SubResource("RectangleShape2D_cfg4s")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=983771248]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=726078345]
+position = Vector2(36, 51.5)
+shape = SubResource("RectangleShape2D_i08kd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c60v3kcboybi7"]
+
+[ext_resource type="PackedScene" uid="uid://ct6a03a16ogri" path="res://scenes/platfrom.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://ccfscfk1wbwwo" path="res://scenes/player.tscn" id="2_4wyf3"]
+
+[node name="world" type="Node2D" unique_id=1244166409]
+
+[node name="platfrom" parent="." unique_id=587257674 instance=ExtResource("1_rwgxs")]
+position = Vector2(270, 306)
+
+[node name="player" parent="." unique_id=1982296836 instance=ExtResource("2_4wyf3")]
+position = Vector2(291, 140)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1383664994]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1216063613]
+motion_mirroring = Vector2(500, 800)
