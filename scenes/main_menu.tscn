@@ -2,28 +2,104 @@
 
 [ext_resource type="Texture2D" uid="uid://cviatayrsghlb" path="res://assets/world/sky.png" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://eu6tcxtw6jyl" path="res://assets/fonts/Pixel Game.otf" id="2_bqqt6"]
+[ext_resource type="FontFile" uid="uid://c1cl5nbjpl0xg" path="res://assets/fonts/Astroz Trial.ttf" id="3_bqqt6"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_cfg4s"]
-font = ExtResource("2_bqqt6")
+[sub_resource type="LabelSettings" id="LabelSettings_tbmy8"]
+font = ExtResource("3_bqqt6")
 font_size = 100
 
-[node name="main_menu" type="Node2D" unique_id=1301808872]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ekxnf"]
+color = Color(0.49411765, 1, 0.49411765, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1166300026]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.83457875, 0, 0.21227127, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
+bg_color = Color(1, 0.33333334, 0.33333334, 0.5058824)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="main_menu" type="Control" unique_id=1642469114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1708494114]
 position = Vector2(587, 333)
 scale = Vector2(4.784, 3.42)
 texture = ExtResource("1_ekxnf")
 
-[node name="Button" type="Button" parent="." unique_id=1433202249]
-offset_left = 454.0
-offset_top = 277.0
-offset_right = 774.0
-offset_bottom = 362.0
+[node name="Panel" type="Panel" parent="." unique_id=178664390]
+layout_mode = 0
+offset_left = -43.99994
+offset_top = -27.0
+offset_right = 1209.0
+offset_bottom = 697.0
 
-[node name="Label" type="Label" parent="." unique_id=1940165154]
-offset_left = 464.0
-offset_top = 99.0
-offset_right = 744.0
-offset_bottom = 201.0
+[node name="Label" type="Label" parent="." unique_id=900678611]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 75.0
+offset_right = 806.0
+offset_bottom = 196.0
 text = "Hop-Up!"
-label_settings = SubResource("LabelSettings_cfg4s")
+label_settings = SubResource("LabelSettings_tbmy8")
+
+[node name="Button" type="Button" parent="." unique_id=1770397846]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 306.0
+offset_right = 776.0
+offset_bottom = 398.0
+theme_override_colors/font_color = Color(0, 1, 0, 0.67058825)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 94
+theme_override_styles/normal = SubResource("StyleBoxLine_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+text = "Play"
+
+[node name="Button2" type="Button" parent="." unique_id=316220142]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.010000001
+offset_left = 430.0
+offset_top = 412.0
+offset_right = 778.0
+offset_bottom = 500.52
+theme_override_colors/font_color = Color(0, 1, 0, 0.67058825)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 94
+theme_override_styles/normal = SubResource("StyleBoxLine_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+text = "Settings"
+
+[node name="Button3" type="Button" parent="." unique_id=615305895]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.224
+anchor_top = 0.646
+anchor_right = 0.224
+anchor_bottom = 0.646
+offset_left = 171.952
+offset_top = 104.39197
+offset_right = 524.952
+offset_bottom = 202.39197
+theme_override_colors/font_color = Color(0, 1, 0, 0.67058825)
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 94
+theme_override_styles/normal = SubResource("StyleBoxLine_ekxnf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+text = "Quit
+"

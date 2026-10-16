@@ -45,7 +45,7 @@ frame_progress = 0.27391776
 position = Vector2(36, 51.5)
 shape = SubResource("RectangleShape2D_cfg4s")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=983771248]
+[node name="Area2D" type="Area2D" parent="." unique_id=983771248 groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=726078345]
 position = Vector2(36, 51.5)

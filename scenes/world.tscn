@@ -1,17 +1,51 @@
 [gd_scene format=3 uid="uid://c60v3kcboybi7"]
 
+[ext_resource type="Script" uid="uid://57sgog2edvc0" path="res://scripts/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://ct6a03a16ogri" path="res://scenes/platfrom.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://ccfscfk1wbwwo" path="res://scenes/player.tscn" id="2_4wyf3"]
+[ext_resource type="Script" uid="uid://dsoo1rtjv3yrf" path="res://scripts/parallax_layer.gd" id="4_71j4m"]
+[ext_resource type="Texture2D" uid="uid://cviatayrsghlb" path="res://assets/world/sky.png" id="5_qfnet"]
+[ext_resource type="Script" uid="uid://dxrvske5trm3d" path="res://scripts/camera_2d.gd" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://whs6mvvr31gn" path="res://scenes/killzone.tscn" id="7_i7141"]
 
-[node name="world" type="Node2D" unique_id=1244166409]
-
-[node name="platfrom" parent="." unique_id=587257674 instance=ExtResource("1_rwgxs")]
-position = Vector2(270, 306)
-
-[node name="player" parent="." unique_id=1982296836 instance=ExtResource("2_4wyf3")]
-position = Vector2(291, 140)
+[node name="world" type="Node2D" unique_id=1244166409 node_paths=PackedStringArray("player")]
+script = ExtResource("1_4wyf3")
+platform_scene = ExtResource("1_rwgxs")
+player = NodePath("player")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1383664994]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1216063613]
-motion_mirroring = Vector2(500, 800)
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1442324903 node_paths=PackedStringArray("player")]
+script = ExtResource("4_71j4m")
+player = NodePath("../../player")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=856838390]
+position = Vector2(270, 61.99999)
+scale = Vector2(14.866, 48.644737)
+texture = ExtResource("5_qfnet")
+region_enabled = true
+region_rect = Rect2(0, 0, 250, 57.5)
+
+[node name="BG1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=567021189]
+position = Vector2(230.00002, 796)
+scale = Vector2(5.476, 4.0025005)
+texture = ExtResource("5_qfnet")
+
+[node name="BG2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1584208128]
+position = Vector2(225.00002, -35)
+scale = Vector2(5.462, 4.534375)
+texture = ExtResource("5_qfnet")
+
+[node name="platfrom" parent="." unique_id=587257674 instance=ExtResource("1_rwgxs")]
+position = Vector2(424, 18)
+
+[node name="player" parent="." unique_id=1982296836 groups=["player"] instance=ExtResource("2_4wyf3")]
+position = Vector2(437, -75)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=455103548 node_paths=PackedStringArray("player")]
+position = Vector2(36, 109)
+script = ExtResource("6_qfnet")
+player = NodePath("..")
+
+[node name="killzone" parent="player/Camera2D" unique_id=723869424 instance=ExtResource("7_i7141")]
+position = Vector2(-24, 329)
