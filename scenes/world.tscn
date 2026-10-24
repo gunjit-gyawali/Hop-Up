@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cviatayrsghlb" path="res://assets/world/sky.png" id="5_qfnet"]
 [ext_resource type="Script" uid="uid://dxrvske5trm3d" path="res://scripts/camera_2d.gd" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://whs6mvvr31gn" path="res://scenes/killzone.tscn" id="7_i7141"]
+[ext_resource type="FontFile" uid="uid://eu6tcxtw6jyl" path="res://assets/fonts/Pixel Game.otf" id="8_4mrxx"]
+[ext_resource type="Script" uid="uid://byhlcfi8skiex" path="res://scripts/score_counter.gd" id="9_7r4gi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfg4s"]
+font = ExtResource("8_4mrxx")
+font_size = 36
 
 [node name="world" type="Node2D" unique_id=1244166409 node_paths=PackedStringArray("player")]
 script = ExtResource("1_4wyf3")
@@ -49,3 +55,20 @@ player = NodePath("..")
 
 [node name="killzone" parent="player/Camera2D" unique_id=723869424 instance=ExtResource("7_i7141")]
 position = Vector2(-24, 329)
+
+[node name="score" type="Label" parent="player" unique_id=925939053]
+offset_left = 321.0
+offset_top = -136.0
+offset_right = 404.0
+offset_bottom = -98.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_cfg4s")
+
+[node name="score_counter" type="Label" parent="player" unique_id=772491705]
+offset_left = 414.0
+offset_top = -136.0
+offset_right = 497.0
+offset_bottom = -98.0
+text = "0"
+label_settings = SubResource("LabelSettings_cfg4s")
+script = ExtResource("9_7r4gi")

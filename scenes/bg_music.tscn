@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://qrauq0hkygps"]
+
+[ext_resource type="AudioStream" uid="uid://begcosddifivg" path="res://assets/music/bg_music.mp3" id="1_f6gl3"]
+
+[node name="bg_music" type="AudioStreamPlayer2D" unique_id=2104926584]
+stream = ExtResource("1_f6gl3")
+autoplay = true
+max_distance = 4096.0
+parameters/looping = true
