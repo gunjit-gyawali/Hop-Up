@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dy5yjvqshoyir"]
+
+[ext_resource type="Script" uid="uid://cjp08bkvnkwjk" path="res://scripts/pickup.gd" id="1_7cqbe"]
+[ext_resource type="Texture2D" uid="uid://bg2xc3qjrd8c3" path="res://assets/world/apple.png" id="1_pg2rt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfg4s"]
+radius = 13.601471
+
+[node name="pickup" type="Area2D" unique_id=1326246331]
+script = ExtResource("1_7cqbe")
+
+[node name="Apple" type="Sprite2D" parent="." unique_id=1123191310]
+position = Vector2(20, 18)
+scale = Vector2(0.28125, 0.25)
+texture = ExtResource("1_pg2rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2097185338]
+position = Vector2(20, 19)
+shape = SubResource("CircleShape2D_cfg4s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

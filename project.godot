@@ -22,7 +22,7 @@ buses/default_bus_layout="uid://dk5wew0je4ri7"
 [autoload]
 
 BgMusic="*uid://qrauq0hkygps"
-HighScore="*uid://158eeoetdq4l"
+HighScoreNum="*uid://ypf6rtqhpsyk"
 
 [display]
 

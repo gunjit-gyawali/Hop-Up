@@ -66,6 +66,8 @@ func spawn_platform() -> void:
 
 
 func _process(_delta: float) -> void:
+	$player/Camera2D/score_counter.text = str(HighScoreNum.current_score)
+	
 	if player == null:
 		return
 

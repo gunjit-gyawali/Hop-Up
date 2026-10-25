@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	$high_score_num.text = str(HighScoreNum.high_score)
 
 func _on_button_pressed() -> void:
 	$pressed.play()
