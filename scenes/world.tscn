@@ -13,37 +13,26 @@
 [sub_resource type="LabelSettings" id="LabelSettings_cfg4s"]
 font = ExtResource("8_4mrxx")
 font_size = 36
+outline_size = 4
+outline_color = Color(0.77411157, 0, 0.18119371, 1)
 
 [node name="world" type="Node2D" unique_id=1244166409 node_paths=PackedStringArray("player")]
 script = ExtResource("1_4wyf3")
 platform_scene = ExtResource("1_rwgxs")
+pickup_scene = ExtResource("10_w7kh3")
 player = NodePath("player")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1383664994]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1442324903 node_paths=PackedStringArray("player")]
+[node name="Background" type="Node2D" parent="." unique_id=1383664994 node_paths=PackedStringArray("camera")]
 script = ExtResource("4_71j4m")
-player = NodePath("../../player")
+camera = NodePath("../player/Camera2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=856838390]
-position = Vector2(270, 61.99999)
-scale = Vector2(14.866, 48.644737)
+[node name="BG1" type="Sprite2D" parent="Background" unique_id=567021189]
 texture = ExtResource("5_qfnet")
-region_enabled = true
-region_rect = Rect2(0, 0, 250, 57.5)
+centered = false
 
-[node name="BG1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=567021189]
-position = Vector2(230.00002, 796)
-scale = Vector2(5.476, 4.0025005)
+[node name="BG2" type="Sprite2D" parent="Background" unique_id=1584208128]
 texture = ExtResource("5_qfnet")
-
-[node name="BG2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1584208128]
-position = Vector2(225.00002, -35)
-scale = Vector2(5.462, 4.534375)
-texture = ExtResource("5_qfnet")
-
-[node name="platfrom" parent="." unique_id=587257674 instance=ExtResource("1_rwgxs")]
-position = Vector2(424, 18)
+centered = false
 
 [node name="player" parent="." unique_id=1982296836 groups=["player"] instance=ExtResource("2_4wyf3")]
 position = Vector2(437, -75)
@@ -57,20 +46,45 @@ player = NodePath("..")
 position = Vector2(-5, 329)
 
 [node name="score" type="Label" parent="player/Camera2D" unique_id=925939053]
-offset_left = 285.0
+light_mask = 5
+visibility_layer = 5
+offset_left = 204.0
 offset_top = -245.0
-offset_right = 368.0
+offset_right = 404.0
 offset_bottom = -207.0
-text = "Score:"
+theme_override_colors/font_color = Color(0.78572845, 0, 0.28497943, 1)
+text = "Current Score:"
+label_settings = SubResource("LabelSettings_cfg4s")
+
+[node name="score2" type="Label" parent="player/Camera2D" unique_id=1686405238]
+light_mask = 5
+visibility_layer = 5
+offset_left = 201.0
+offset_top = -280.0
+offset_right = 401.0
+offset_bottom = -242.0
+theme_override_colors/font_color = Color(0.78572845, 0, 0.28497943, 1)
+text = "High Score:"
 label_settings = SubResource("LabelSettings_cfg4s")
 
 [node name="score_counter" type="Label" parent="player/Camera2D" unique_id=772491705]
-offset_left = 378.0
+light_mask = 5
+visibility_layer = 5
+offset_left = 411.0
 offset_top = -245.0
-offset_right = 461.0
+offset_right = 494.0
 offset_bottom = -207.0
+theme_override_colors/font_color = Color(0.78572845, 0, 0.28497943, 1)
 text = "0"
 label_settings = SubResource("LabelSettings_cfg4s")
 
-[node name="pickup" parent="." unique_id=1326246331 instance=ExtResource("10_w7kh3")]
-position = Vector2(458, 3)
+[node name="high_score_num" type="Label" parent="player/Camera2D" unique_id=1613130181]
+light_mask = 5
+visibility_layer = 5
+offset_left = 353.0
+offset_top = -279.0
+offset_right = 436.0
+offset_bottom = -241.0
+theme_override_colors/font_color = Color(0.78572845, 0, 0.28497943, 1)
+text = "0"
+label_settings = SubResource("LabelSettings_cfg4s")
