@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ddun42v6ggxe4" path="res://assets/player/4-Jump/2.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bpnqy2l0lfo6q" path="res://assets/player/4-Jump/3.png" id="3_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dtx2v6j7oafku" path="res://assets/player/4-Jump/4.png" id="4_fjrip"]
+[ext_resource type="AudioStream" uid="uid://cd86vdw8fiagp" path="res://assets/music/for_world.mp3" id="6_tuyoq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cfg4s"]
 animations = [{
@@ -29,8 +30,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cfg4s"]
 size = Vector2(26, 13)
 
-
-
 [node name="player" type="CharacterBody2D" unique_id=1641546661]
 script = ExtResource("1_qlg0r")
 
@@ -44,4 +43,9 @@ frame_progress = 0.27391776
 position = Vector2(36, 51.5)
 shape = SubResource("RectangleShape2D_cfg4s")
 
-
+[node name="ForWorld" type="AudioStreamPlayer2D" parent="." unique_id=1218881665]
+position = Vector2(-19, 44)
+stream = ExtResource("6_tuyoq")
+autoplay = true
+bus = &"bg"
+parameters/looping = true

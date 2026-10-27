@@ -6,8 +6,8 @@ extends Node2D
 @export var player: Node2D
 
 @export var platform_count: int = 5
-@export var vertical_spacing_min: float = 100.0
-@export var vertical_spacing_max: float = 155.0
+@export var vertical_spacing_min: float = 130.0
+@export var vertical_spacing_max: float = 152.0
 @export var max_horizontal_distance: float = 130.0
 @export var horizontal_margin: float = 70.0
 @export var spawn_ahead_distance: float = 1750.0

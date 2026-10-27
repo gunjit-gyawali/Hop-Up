@@ -6,4 +6,5 @@
 stream = ExtResource("1_f6gl3")
 autoplay = true
 max_distance = 4096.0
+bus = &"bg"
 parameters/looping = true

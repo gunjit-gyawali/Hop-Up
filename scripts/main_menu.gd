@@ -8,9 +8,12 @@ func _on_button_pressed() -> void:
 	await $pressed.finished
 	HighScoreNum.current_score = 0
 	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	BgMusic.stop()
 
 func _on_button_2_pressed() -> void:
 	$pressed.play()
+	await $pressed.finished
+	get_tree().change_scene_to_file("res://scenes/settings.tscn")
 	
 func _on_button_3_pressed() -> void:
 	$pressed.play()

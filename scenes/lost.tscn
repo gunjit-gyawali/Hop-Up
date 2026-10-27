@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ljtmnu1o75gj"]
+[gd_scene format=3 uid="uid://ljtmnu1o75gj"]
 
 [ext_resource type="Script" uid="uid://brn8s14ucfplj" path="res://scripts/lost.gd" id="1_m6hdc"]
 [ext_resource type="Texture2D" uid="uid://cviatayrsghlb" path="res://assets/world/sky.png" id="2_sky"]
@@ -10,10 +10,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_title"]
 font = ExtResource("3_title")
 font_size = 100
-
-[sub_resource type="LabelSettings" id="LabelSettings_score"]
-font = ExtResource("4_btn")
-font_size = 54
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_normal"]
 color = Color(0.49411765, 1, 0.49411765, 0)
@@ -32,7 +28,11 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="lost" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_score"]
+font = ExtResource("4_btn")
+font_size = 54
+
+[node name="lost" type="Control" unique_id=918126253]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,19 +41,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m6hdc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1506067590]
 position = Vector2(587, 333)
 scale = Vector2(4.784, 3.42)
 texture = ExtResource("2_sky")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1368561162]
 layout_mode = 0
 offset_left = -43.99994
 offset_top = -27.0
 offset_right = 1209.0
 offset_bottom = 697.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1664035881]
 layout_mode = 0
 offset_left = 326.0
 offset_top = 75.0
@@ -62,7 +62,7 @@ offset_bottom = 196.0
 text = "Y0u Lost !"
 label_settings = SubResource("LabelSettings_title")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1165661974]
 layout_mode = 0
 offset_left = 429.0
 offset_top = 364.0
@@ -76,7 +76,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
 text = "Play Again"
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button3" type="Button" parent="." unique_id=684757545]
 layout_mode = 0
 offset_left = 430.0
 offset_top = 480.0
@@ -90,18 +90,18 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
 text = "Quit"
 
-[node name="hover" type="AudioStreamPlayer2D" parent="."]
+[node name="hover" type="AudioStreamPlayer2D" parent="." unique_id=457344806]
 position = Vector2(409, 598)
 stream = ExtResource("5_hover")
 bus = &"buttons"
 
-[node name="pressed" type="AudioStreamPlayer2D" parent="."]
+[node name="pressed" type="AudioStreamPlayer2D" parent="." unique_id=1778626928]
 position = Vector2(169, 376)
 stream = ExtResource("6_press")
 max_distance = 4096.0
 bus = &"buttons"
 
-[node name="high_score" type="Label" parent="."]
+[node name="high_score" type="Label" parent="." unique_id=159960681]
 layout_mode = 0
 offset_left = 454.0
 offset_top = 235.0
@@ -110,7 +110,7 @@ offset_bottom = 288.0
 text = "High Score:"
 label_settings = SubResource("LabelSettings_score")
 
-[node name="high_score_num" type="Label" parent="."]
+[node name="high_score_num" type="Label" parent="." unique_id=984205306]
 layout_mode = 0
 offset_left = 683.0
 offset_top = 235.0
