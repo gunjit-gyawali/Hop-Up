@@ -44,6 +44,10 @@ And that's it! You're ready to play.
 
 ## Screenshots
 
+<img width="1920" height="1080" alt="Screenshot From 2026-10-27 20-25-20" src="https://github.com/user-attachments/assets/98319b6d-94ba-4694-a98c-d6b08c82dd69" />
+<img width="1920" height="1080" alt="Screenshot From 2026-10-27 20-25-02" src="https://github.com/user-attachments/assets/abb10fc1-b4b0-4ce2-b346-c0d7d0b5dccc" />
+<img width="1920" height="1080" alt="Screenshot From 2026-10-27 20-24-43" src="https://github.com/user-attachments/assets/f16e2b71-c1fe-4314-828d-33572042064d" />
+<img width="1920" height="1080" alt="Screenshot From 2026-10-27 20-22-56" src="https://github.com/user-attachments/assets/1666d239-1412-4ba8-927f-3aa53cb29556" />
 
 
 ## What I Learned
